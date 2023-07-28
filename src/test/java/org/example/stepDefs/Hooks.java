@@ -26,6 +26,7 @@ public class Hooks {
     @After
     public void quitBrowser () throws InterruptedException
     {
+        driver.manage().deleteAllCookies();
         Thread.sleep(3000);
         driver.quit();
     }

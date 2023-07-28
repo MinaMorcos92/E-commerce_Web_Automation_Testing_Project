@@ -1,9 +1,9 @@
 @smoke
 
-Feature: F04_Search | user could search for products
+Feature: F04_Search | user could search for products by product name and serial number
 
   Scenario Outline: user could search using product name
-    When user search with valid product "<product name>"
+    When user search with valid product name "<product name>"
     Then verify user find relative results "<product name>"
     Examples:
       |product name|

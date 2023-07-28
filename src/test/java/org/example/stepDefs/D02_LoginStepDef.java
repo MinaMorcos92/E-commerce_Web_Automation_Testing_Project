@@ -22,8 +22,8 @@ public class D02_LoginStepDef {
 
 
 
-    @When("user login with valid {string} and valid {string}")
-    public void userLoginWithValidAndValid(String arg0, String arg1)
+    @When("user login with valid username {string} and valid password {string}")
+    public void userLoginWithValidUsernameAndValidPassword(String arg0, String arg1)
     {
         login.emailForLogin.sendKeys(arg0);
         login.passwordForLogin.sendKeys(arg1);
@@ -43,7 +43,7 @@ public class D02_LoginStepDef {
         SoftAssert soft = new SoftAssert();
         String currentUrl= Hooks.driver.getCurrentUrl();
         soft.assertEquals(currentUrl,"https://demo.nopcommerce.com/");
-        Boolean myAccountTabIsDisplayed = home.MyAccountTab.isDisplayed();
+        boolean myAccountTabIsDisplayed = home.MyAccountTab.isDisplayed();
         soft.assertTrue(myAccountTabIsDisplayed);
         soft.assertAll();
 

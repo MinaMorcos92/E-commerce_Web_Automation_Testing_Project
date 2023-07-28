@@ -42,8 +42,8 @@ public class P03_HomePage {
     public WebElement searchField;
 
 
-    @FindBy(css = "button[class=\"button-1 search-box-button\"]")
-    public WebElement searchButton;
+//    @FindBy(css = "button[class=\"button-1 search-box-button\"]")
+//    public WebElement searchButton;
 
 
     @FindBy(css = "div[class=\"product-item\"]")
@@ -65,8 +65,8 @@ public class P03_HomePage {
       return Hooks.driver.findElements(By.xpath("(//ul[@class='top-menu notmobile']//ul)["+selectedMainCat+"]/li"));
     }
 
-    @FindBy(css = "div[class=\"page-title\"] h1")
-    public WebElement pageTitle;
+//    @FindBy(css = "div[class=\"page-title\"] h1")
+//    public WebElement pageTitle;
 
     @FindBy(css = ".nivoSlider > a:nth-of-type(1)")
     public WebElement iphoneSlider;
@@ -101,16 +101,5 @@ public class P03_HomePage {
 
     @FindBy(css = "input[class=\"qty-input\"]")
     public WebElement qtyNumber;
-
-
-
-
-
-
-
-
-
-
-
 
 }

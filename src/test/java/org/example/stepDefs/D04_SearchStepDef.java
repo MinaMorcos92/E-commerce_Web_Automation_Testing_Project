@@ -14,21 +14,15 @@ public class D04_SearchStepDef {
 
 
 
-    @When("user search with valid product {string}")
-    public void userSearchWithValidProduct(String arg0)
+    @When("user search with valid product name {string}")
+    public void userSearchWithValidProductName(String arg0)
     {
       home.searchField.sendKeys(arg0);
       home.searchField.sendKeys(Keys.ENTER);
     }
 
-//    @And("user click on search button")
-//    public void userClickOnSearchButton()
-//    {
-//        home.searchField.sendKeys(Keys.ENTER);
-//    }
-
     @Then("verify user find relative results {string}")
-    public void verifyUserFindRelativeResults(String name)
+    public void verifyUserFindRelativeResults(String productName)
     {
         SoftAssert soft = new SoftAssert();
         String url = Hooks.driver.getCurrentUrl();
@@ -37,7 +31,7 @@ public class D04_SearchStepDef {
         for (int i = 0; i < count; i++)
         {
             String searchResultText = home.searchResults.get(i).getText().toLowerCase();
-            soft.assertTrue(searchResultText.contains(name.toLowerCase()));
+            soft.assertTrue(searchResultText.contains(productName.toLowerCase()));
         }
 
         soft.assertAll();
@@ -45,7 +39,7 @@ public class D04_SearchStepDef {
 
 
     @When("user search with valid {string}")
-    public void userSearchWithValid(String arg0)
+    public void userSearchWithValidSerialNumber(String arg0)
     {
         home.searchField.sendKeys(arg0);
         home.searchField.sendKeys(Keys.ENTER);
@@ -58,10 +52,10 @@ public class D04_SearchStepDef {
     }
 
     @Then("verify user find the exact serial {string}")
-    public void verifyUserFindTheExactSerial(String name)
+    public void verifyUserFindTheExactSerial(String serialNumber)
     {
         String SKU =home.getSkuText.getText();
-        Assert.assertEquals(SKU,name);
+        Assert.assertEquals(SKU,serialNumber);
     }
 
 

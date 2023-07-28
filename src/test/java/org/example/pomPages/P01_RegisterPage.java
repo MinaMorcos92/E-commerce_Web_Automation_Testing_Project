@@ -47,5 +47,4 @@ public class P01_RegisterPage {
     @FindBy(css = "div[class=\"result\"]")
     public WebElement registerCompletedMsg;
 
-
 }

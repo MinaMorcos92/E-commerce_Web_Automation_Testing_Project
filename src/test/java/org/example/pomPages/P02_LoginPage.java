@@ -24,7 +24,4 @@ public class P02_LoginPage {
     @FindBy(css = "div[class=\"message-error validation-summary-errors\"]")
     public WebElement loginFailedMsg;
 
-
-
-
 }

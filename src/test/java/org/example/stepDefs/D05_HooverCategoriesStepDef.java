@@ -18,7 +18,7 @@ public class D05_HooverCategoriesStepDef {
 
     Random random = new Random();
 
-    int selectedmaincat = random.nextInt(7);
+    int selectedMainCat = random.nextInt(7);
 
     List<WebElement> mainCategories = home.mainCategories;
 
@@ -28,19 +28,19 @@ public class D05_HooverCategoriesStepDef {
 
     boolean isSub;
 
-    @When("select one of the three main categories to hover randomly")
-    public void selectOneOfTheThreeMainCategoriesToHoverRandomly()
+    @When("select one of the seven main categories to hover randomly")
+    public void selectOneOfTheSevenMainCategoriesToHoverRandomly()
     {
         Actions actions = new Actions(Hooks.driver);
-        actions.moveToElement(mainCategories.get(selectedmaincat)).perform();
-        mainCatTitle = mainCategories.get(selectedmaincat).getText().toLowerCase().trim();
+        actions.moveToElement(mainCategories.get(selectedMainCat)).perform();
+        mainCatTitle = mainCategories.get(selectedMainCat).getText().toLowerCase().trim();
 
 
     }
 
-    @And("select one of the three subcategories to hover randomly")
-    public void selectOneOfTheThreeSubcategoriesToHoverRandomly() {
-        List<WebElement> subcat = home.sub_Categories((selectedmaincat + 1));
+    @And("select one of the three subcategories to hover randomly if it have")
+    public void selectOneOfTheThreeSubcategoriesToHoverRandomlyIfItHave() {
+        List<WebElement> subcat = home.sub_Categories((selectedMainCat + 1));
         Hooks.driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
 
         if (!subcat.isEmpty())
@@ -55,7 +55,7 @@ public class D05_HooverCategoriesStepDef {
         else
         {
             isSub = false;
-            mainCategories.get(selectedmaincat).click();
+            mainCategories.get(selectedMainCat).click();
         }
         Hooks.driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }

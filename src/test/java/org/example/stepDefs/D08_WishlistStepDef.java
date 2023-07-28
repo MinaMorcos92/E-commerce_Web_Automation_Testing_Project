@@ -8,8 +8,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
-
-import java.awt.*;
 import java.time.Duration;
 
 public class D08_WishlistStepDef {
@@ -44,8 +42,8 @@ public class D08_WishlistStepDef {
         home.wishListBarButton.click();
     }
 
-    @Then("is quantity more than zero")
-    public void quantityIsMoreThanZero()
+    @Then("Verify quantity more than zero")
+    public void verifyQuantityIsMoreThanZero()
     {
         String qty = home.qtyNumber.getAttribute("value");
         System.out.println(qty);

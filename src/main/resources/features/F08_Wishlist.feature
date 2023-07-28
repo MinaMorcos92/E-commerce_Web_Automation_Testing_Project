@@ -8,4 +8,4 @@ Feature: F08_WishList | users could add products to the wishlist
 
     Scenario: user add product and go to wishlist to make sure it's added successfully
       When user add product and go to wishlist
-      Then is quantity more than zero
+      Then Verify quantity more than zero

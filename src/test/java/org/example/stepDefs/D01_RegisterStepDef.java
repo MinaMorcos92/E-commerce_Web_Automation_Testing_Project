@@ -34,15 +34,15 @@ public class D01_RegisterStepDef {
         register.lastName.sendKeys(arg1);
     }
 
-    @And("user enter date of birth")
-    public void userEnterDateOfBirth()
+    @And("user enter date of birth {string} {string} {string}")
+    public void userEnterDateOfBirth(String arg0, String arg1, String arg2)
     {
         Select day = new Select(register.dateOfBirthDay);
-        day.selectByValue("7");
+        day.selectByValue(arg0);
         Select month = new Select(register.dateOfBirthMonth);
-        month.selectByValue("7");
+        month.selectByValue(arg1);
         Select year = new Select(register.dateOfBirthYear);
-        year.selectByValue("1992");
+        year.selectByValue(arg2);
     }
 
     @And("user enter email {string} field")
@@ -74,4 +74,6 @@ public class D01_RegisterStepDef {
         soft.assertTrue(registerationMsg.contains("Your registration completed"));
         soft.assertAll();
     }
+
+
 }
