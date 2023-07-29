@@ -3,6 +3,7 @@ package org.example.stepDefs;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.example.pomPages.P03_HomePage;
+import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
 import java.util.ArrayList;
 
@@ -43,6 +44,7 @@ public class D07_FollowUs {
     {
         ArrayList<String> tabs = new ArrayList<>(Hooks.driver.getWindowHandles());
         System.out.println(tabs.size());
+        Assert.assertEquals(tabs.size(),2);
         Hooks.driver.switchTo().window(tabs.get(1));
         String currentUrl = Hooks.driver.getCurrentUrl();
         SoftAssert soft = new SoftAssert();

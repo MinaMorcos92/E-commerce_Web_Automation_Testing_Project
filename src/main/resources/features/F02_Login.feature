@@ -3,7 +3,7 @@ Feature: F02_Login | users could use login functionality to use their accounts
 
   Scenario: user could login with valid email and password
     Given user go to login page
-    When user login with valid username "test@example.com" and valid password "P@ssw0rd"
+    When user login with valid username "test1@example.com" and valid password "P@ssw0rd"
     And user click on login button
     Then verify login to the system successfully
 
